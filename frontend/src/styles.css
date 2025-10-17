@@ -1,0 +1,86 @@
+:root{
+	--bg:#0f1724;
+	--card:#0b1220;
+	--muted:#9aa6b2;
+	--accent:#8abf69;
+	--accent-2:#6aa3d8;
+	--glass: rgba(255,255,255,0.03);
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter, Arial, sans-serif;background:linear-gradient(180deg,#071426 0%, #092033 100%);color:#e6eef6;margin:0}
+.vc-app{min-height:100vh;display:flex;flex-direction:column}
+.vc-header{display:flex;justify-content:space-between;align-items:center;padding:18px 32px;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);border-bottom:1px solid rgba(255,255,255,0.03)}
+.vc-brand{display:flex;align-items:baseline;gap:12px}
+.vc-brand strong{font-size:20px;color:var(--accent)}
+.vc-tag{font-size:12px;color:var(--muted)}
+.vc-nav{display:flex;gap:12px}
+.vc-link{ /* usar mismo estilo que botones normales */ background: linear-gradient(180deg,var(--accent), #6aa95e); border: 1px solid rgba(255,255,255,0.06); color:#062016; padding:8px 12px; border-radius:8px; text-decoration:none}
+.vc-link:hover{ background: linear-gradient(180deg,#9ed573,#76b96a); color:#062016 }
+
+.vc-main{flex:1;padding:28px 32px}
+.vc-title{margin:0 0 18px 0;color:#eaf6ff}
+.vc-content{display:flex;gap:20px;align-items:flex-start}
+
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);box-shadow: 0 6px 18px rgba(2,6,23,0.6)}
+.card h3{margin:0 0 12px 0}
+
+.form-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+/* Make immediate children of form-row adapt to available space */
+.form-row > *{
+	flex: 1 1 auto;
+	min-width: 120px;
+}
+
+/* Ensure inputs inside small cards don't overflow */
+.card input, .card select, .card textarea{width:100%;box-sizing:border-box}
+
+/* Inputs and selects with improved contrast and focus */
+input, select, textarea{
+	background: rgba(255,255,255,0.03);
+	border: 1px solid rgba(255,255,255,0.08);
+	padding:8px 10px;
+	color: #e6eef6;
+	border-radius:8px;
+	outline: none;
+	transition: box-shadow .12s ease, border-color .12s ease;
+}
+input:focus, select:focus, textarea:focus{
+	box-shadow: 0 4px 18px rgba(106,163,216,0.12);
+	border-color: rgba(106,163,216,0.9);
+}
+
+/* Make selected option more visible in some terminals/browsers */
+select option{ background: #0b1220; color: #e6eef6 }
+
+/* Buttons with stronger borders and hover states */
+button{
+	background: linear-gradient(180deg,var(--accent), #6aa95e);
+	border: 1px solid rgba(255,255,255,0.06);
+	color:#062016;
+	padding:8px 12px;
+	border-radius:8px;
+	cursor:pointer;
+	font-weight:600;
+	transition: transform .06s ease, box-shadow .12s ease, opacity .08s ease;
+}
+button:hover{ transform: translateY(-1px); box-shadow: 0 6px 18px rgba(11,18,32,0.6); }
+
+button.secondary{
+	background: rgba(255,255,255,0.02);
+	border: 1px solid rgba(255,255,255,0.12);
+	color: var(--muted);
+}
+button.secondary:hover{ background: rgba(255,255,255,0.04); color: #fff }
+
+.table{width:760px;border-collapse:collapse}
+.table th, .table td{padding:10px;border-bottom:1px solid rgba(255,255,255,0.03)}
+.table th{color:var(--muted);text-align:left;font-size:13px}
+
+.vc-footer{padding:14px 32px;text-align:center;color:var(--muted);font-size:13px}
+
+@media(max-width:900px){
+	.vc-content{flex-direction:column}
+	.table{width:100%}
+}

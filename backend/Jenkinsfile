@@ -1,0 +1,25 @@
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        sh 'mvn -f backend/pom.xml clean package -DskipTests'
+      }
+    }
+    stage('Test') {
+      steps {
+        sh 'mvn -f backend/pom.xml test'
+      }
+    }
+    stage('Docker Build') {
+      steps {
+        sh 'docker build -t vino-costero/backend:latest -f backend/Dockerfile .'
+      }
+    }
+    stage('Push') {
+      steps {
+        echo 'Publish to registry - add credentials and registry url'
+      }
+    }
+  }
+}
