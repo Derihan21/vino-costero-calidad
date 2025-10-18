@@ -1,4 +1,4 @@
-# Vino Costero - Fase 1
+# Vino Costero - Fase 2
 
 Proyecto monorepo para la Fase 1 del sistema de control de producción y calidad de Vino Costero.
 
@@ -32,3 +32,4 @@ Arquitectura y notas:
 - Jenkinsfile: pipeline ejemplo con stages para build, test, docker build y push (placeholder para credenciales).
 
 Sigue las instrucciones en cada subcarpeta para comandos específicos.
+
